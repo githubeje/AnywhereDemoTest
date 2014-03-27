@@ -1,0 +1,3 @@
+$("principal").live("pageinit",function() {
+	
+});

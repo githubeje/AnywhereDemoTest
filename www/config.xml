@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="cl.imasd.anywhere" version="1.0.0">
+	<name>Anywhere</name>
+	<description>Anywhere Mobile Solutions</description>
+	<author href="https://www.ejedigital.cl" email="soporte@ejedigital.cl">Soporte</author>
+	<preference name="phonegap-version" value="2.7.0" />
+	<preference name="orientation"      value="portrait" />
+	<preference name="target-device"    value="universal" />
+	<preference name="fullscreen"       value="true" />
+	<preference name="exit-on-suspend" value="true" />
+	<preference name="android-minSdkVersion" value="10" />
+	<icon src="icon.png" />
+	<icon src="icons/android/icon_36x36.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="icons/android/icon_48x48.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icons/android/icon_72x72.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="icons/android/icon_96x96.png" gap:platform="android" gap:density="xhdpi" />	
+	<icon src="icons/ios/icon_57x57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="icons/ios/icon_72x72.png" gap:platform="ios" width="72" height="72" />
+	<feature name="http://api.phonegap.com/1.0/device"/>
+	<feature name="http://api.phonegap.com/1.0/battery"/>
+	<feature name="http://api.phonegap.com/1.0/camera"/>
+	<feature name="http://api.phonegap.com/1.0/contacts"/>
+	<feature name="http://api.phonegap.com/1.0/file"/>
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/media"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://api.phonegap.com/1.0/notification"/>
+	<gap:plugin name="com.phonegap.plugins.pushplugin"/>
+	<gap:splash src="splash/ios/splash_320x480.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="splash/ios/splash_480x320.png" gap:platform="ios" width="480" height="320" />
+	<gap:splash src="splash/ios/splash_640x960.png" gap:platform="ios" width="640" height="960" />
+	<gap:splash src="splash/ios/splash_960x640.png" gap:platform="ios" width="960" height="640" />
+	<gap:splash src="splash/ios/splash_640x1136.png" gap:platform="ios" width="640" height="1136" />
+	<gap:splash src="splash/ios/splash_1136x640.png" gap:platform="ios" width="1136" height="640" />
+	<gap:splash src="splash/ios/splash_768x1004.png" gap:platform="ios" width="768" height="1004" />
+	<gap:splash src="splash/ios/splash_1024x768.png" gap:platform="ios" width="1024" height="768" />
+	<gap:splash src="splash/ios/splash_1536x2008.png" gap:platform="ios" width="1536" height="2008" />
+	<gap:splash src="splash/ios/splash_2048x1496.png" gap:platform="ios" width="2048" height="1496" />
+	<gap:splash src="splash/android/splash_426x320.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="splash/android/splash_470x320.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="splash/android/splash_640x480.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="splash/android/splash_960x720.png" gap:platform="android" gap:density="xhdpi" />	
+</widget>

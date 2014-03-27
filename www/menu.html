@@ -1,0 +1,172 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="iso-8859-1"/>
+		<title>Menu</title>
+		<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile-1.2.1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.simpledialog.min.css"/>
+		<link rel="stylesheet" type="text/css" href="jquery-mobile/app.css"/>
+		<script type="text/javascript" src="jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+		<script type="text/javascript" src="phonegap.js"></script>        
+		<script type="text/javascript" src="jquery-mobile/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="jquery-mobile/jquery.cookie.js"></script>
+        <script type="text/javascript" src="jquery-mobile/jquery.mobile.simpledialog2.min.js"></script>
+		<script type="text/javascript" src="jquery-mobile/messages_es.js"></script>		
+		<script type="text/javascript" src="js/generales.js"></script>
+		<script type="text/javascript" src="js/PushNotification.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+		<style>
+			.ui-icon-close {
+				background-image: url("images/close.png");
+			}		
+		</style>
+	</head> 
+	<body>
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+				<img src="images/anywhere.png" style="width:150px;">
+			   	<a href="#" id="close" data-icon="close" data-iconpos="notext" style="left:auto;right:20px;">Cerrar</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+		        <ul data-role="listview" data-inset="true" id="lista">
+	        		<li> 
+	        			<a href='step/index.html' rel="external"> 
+	        				<img src='icons/stepstep.png'> 
+	        				<h2>StepStep</h2><p>Herramienta apoyo para el control de procedimientos y normas de trabajo de la fuerza de venta</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='#' id="agenda" rel="external"> 
+	        				<img src='icons/agenda.png'> 
+	        				<h2>Agenda</h2><p>Agenda para el registro de actividades comerciales</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='ipos/index.html' rel="external"> 
+	        				<img src='icons/ipos.png'> 
+	        				<h2>IPos</h2><p>Aplicaci&oacute;n m&oacute;vil de apoyo a la gesti&oacute;n de fuerzas de ventas</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='#' rel="external"> 
+	        				<img src='icons/inout.png'> 
+	        				<h2>InOut</h2><p>Registros de entrada y salida del personal</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='imarket/index.html' rel="external"> 
+	        				<img src='icons/imarket.png'> 
+	        				<h2>IMarket</h2><p>Aplicaci&oacute;n m&oacute;vil para recolecci&oacute;n de informaci&oacute;n de la competencia</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='imarker/index.html' rel="external"> 
+	        				<img src='icons/imarker.png'> 
+	        				<h2>IMarker</h2><p>Aplicaci&oacute;n para el marcado de puntos georeferenciados</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='generator/index.html' rel="external"> 
+	        				<img src='icons/generator.png'> 
+	        				<h2>GeneratorForm</h2><p>Repositorio de Formularios de trabajos</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href='ilocator/index.html' rel="external"> 
+	        				<img src='icons/locator.png'> 
+	        				<h2>Locator</h2><p>Aplicaci&oacute;n para la localizacion de puntos geogr&aacute;ficos</p> 
+	        			</a> 
+	        		</li>
+	        		<li> 
+	        			<a href="#enrolamiento">Enrolar
+	        				<img src='icons/enroll.png'> 
+	        				<h2></h2><p>Enrolamiento de usuario al sistema de notificaciones</p> 
+	        			</a> 
+	        		</li>
+		        </ul>
+			</div>
+		</div>
+		<div data-role="page" id="enrolamiento">
+			<div data-role="header" data-theme="e">
+				<a href="#principal" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="Yo Puedo">Anywhere</h1>
+			   	<a href="#principal" rel="external" data-icon="home" data-iconpos="notext">Home</a>		
+			</div>
+			<div data-role="content" data-theme="c">
+			    <form method="get" id="formulario1">	
+					<div data-role="fieldcontain">
+						<label for="txt_rut">Rut:</label>
+						<input name="txt_rut" id="txt_rut" type="text" class="required">
+					</div>
+			        <div data-role="fieldcontain">
+						<label for="txt_password">Password:</label>
+						<input name="txt_password" id="txt_password" type="password" class="required">
+					</div>
+			    </form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" onclick="capturePhotoEdit();">Capturar Foto</a></li>
+						<li><a href="#fotografia" data-icon="search" data-iconpos="notext">Ver Foto</a></li>
+						<li><a href="#" id="enrolar" data-icon="save" data-iconpos="notext">Registrar</a></li>
+						<li><a href="#" id="desenrolar" data-icon="trash" data-iconpos="notext">Desregistrar</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="fotografia" data-theme="e">
+			<div data-role="header">
+				<a href="#enrolamiento" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="Yo Puedo">Anywhere - Fotograf&iacute;a</h1>
+			   	<a href="#principal" rel="external" data-icon="home" data-iconpos="notext">Home</a>	
+			</div>
+			<div data-role="content"  style="text-align:center" data-theme="c">
+				<div data-role="fieldcontain">
+					<div class="ui-bar-c ui-corner-all ui-shadow center" style="padding:1em;width:400px;height:300px" >
+						<img style="position:relative;width:100%;height:96%" id="capturefacing" src="#" alt="mi foto"/>						
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div data-role="page" id="mensaje">
+			<div data-role="header" data-theme="e">
+				<a href="#principal" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="Yo Puedo - Mensaje">Anywhere - Mensaje</h1>
+			   	<a href="#principal" rel="external" data-icon="home" data-iconpos="notext">Home</a>					
+			</div>
+			<div data-role="content" data-theme="c">	
+		   		<div id="txt_mensaje"></div>	
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+		    	<div data-role="navbar">
+					<ul>
+						<li><a href="#respuesta" id="btn_responder">Responder</a></li>
+					</ul>
+		        </div>
+			</div>
+		</div>
+		<div data-role="page" id="respuesta">
+			<div data-role="header" data-theme="e">
+				<a href="#mensaje" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="Yo Puedo - Respuesta">Anywhere - Respuesta</h1>
+			   	<a href="#principal" data-icon="home" data-iconpos="notext">Home</a>	
+			</div>
+			<div data-role="content" data-theme="c">
+				<form method="get" id="formulario2">
+					<label for="txt_respuesta">Mensaje:</label>
+			   		<textarea cols="40" rows="8" style="height:200px;" name="txt_respuesta" id="txt_respuesta"></textarea>
+			   	</form>	
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+		    	<div data-role="navbar">
+					<ul>
+						<li><a href="#" id="response">Responder</a></li>
+					</ul>
+		        </div>
+			</div>
+		</div>
+	</body>
+</html>

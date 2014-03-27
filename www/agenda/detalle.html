@@ -1,0 +1,187 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta charset="iso-8859-1">
+		<title>Agenda Comercial</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile-1.2.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/app.css">
+		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+		<script src="../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+		<script src="../jquery-mobile/jquery.ui.map.js"></script>
+        <script src="../jquery-mobile/jquery.ui.map.extensions.js"></script>		
+        <script src="../jquery-mobile/moment.min.js"></script>
+        <script src="../jquery-mobile/purl.js"></script>
+		<script src="js/geolocator.js"></script>        
+		<script src="js/detalle.js"></script>
+        <style>
+			.ui-icon-close {
+				background-image: url("../images/close.png");
+			}	
+			
+			.ui-icon-save {
+				background-image: url("../images/save.png");
+			}
+		</style>		
+	</head> 
+	<body>
+		<div data-role="page" id="detalle">
+			<div data-role="header" data-theme="e">
+		    	<a href="#" id="back" data-role="button" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1>Agenda Comercial - Detalle Evento</h1>
+		    	<a href="index.html" rel="external" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<div>
+					<h3><span>Cliente </span></h3>
+                </div>
+		        <div data-role="fieldcontain">
+ 					<input type="hidden" id="idAccion" value="">
+		         	<label for="clienteid">Identificador:</label>
+ 					<input type="text"  class="tongua" readonly value="" id="clienteid">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="nombrecliente">Nombre:</label>
+ 					<input type="text"  class="tongua" readonly value="" id="nombrecliente">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="rut">Rut:</label>
+ 					<input type="text" class="tongua" readonly value="" id="rut">
+				</div>
+				
+				<div class="inline-form">
+					<div class="wrapper">
+						<div class="content">
+							<input class="tongua" data-mini="true" id="celular" name="celular" type="text" readonly/>
+						</div>
+					</div>
+					<div class="left text">
+						<label for="celular">Telefono:</label>
+					</div>
+					<div class="right">
+						<a href="#" id="celularlink" data-role="button" data-inline="true" data-mini="true" data-icon="phone" data-iconpos="notext">Call</a>
+					</div>
+					<div class="wrapper">
+						<div class="content">
+							<input class="tongua"  data-mini="true" id="correo" name="correo" type="text" readonly/>
+						</div>
+					</div>
+					<div class="left text"><label for="correo">Correo:</label></div>
+					<div class="right">
+						<a href="#" id="correolink" data-role="button" data-inline="true" data-mini="true" data-icon="email" data-iconpos="notext">Mail</a>
+					</div>
+				</div>
+				<div>
+					<h3><span>Evento</span></h3>
+                </div>
+		        <div data-role="fieldcontain">
+		         	<label for="fecha">Fecha:</label>
+ 					<input type="text" class="tongua"  readonly value="" id="fecha">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="tipo">Tipo:</label>
+ 					<input type="text" class="tongua"  readonly value="" id="tipo">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="lugar">Lugar:</label>
+ 					<input type="text" class="tongua"  readonly value="" id="lugar">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="prioridad">Prioridad:</label>
+ 					<input type="text" class="tongua"  readonly value="" id="prioridad">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="estado">Estado:</label>
+ 					<input type="text" class="tongua"  readonly value="" id="estado">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="observaciones">Observaciones:</label>
+					<textarea id="observaciones" name="observaciones" class="tongua"  cols="40" rows="8" readonly></textarea> 					
+				</div>
+				<div>
+					<h3>
+                		<span>Documento</span>
+					</h3>
+                </div>
+		        <div data-role="fieldcontain">
+		         	<label for="archivos">Archivos:</label>
+ 					<input type="text" class="tongua"  readonly value="" id="archivos">
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="c">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#documento" data-role="button" data-icon="plus" data-iconpos="notext">Agregar Documento</a></li>
+						<li><a href="#observacion" data-role="button" data-icon="gear" data-iconpos="notext" >Observaciones del Evento</a></li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+		<div data-role="page" id="documento">
+			<div data-role="header" data-theme="e">
+		    	<a href="#detalle" data-role="button" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1>Agenda Comercial - Documentacion...</h1>
+		    	<a href="index.html" rel="external" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+		        <div data-role="fieldcontain">
+		         	<label for="tipodocumento">Tipo Documento:</label>
+					<select id="tipodocumento" name="tipodocumento" class="required">
+						<option selected>Selección opción...</option>
+					</select>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#" data-role="button" id="actualizar">Actualizar</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="observacion">
+			<div data-role="header" data-theme="e">
+		    	<a href="#detalle" data-role="button" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1>Agenda Comercial - Observacion...</h1>
+		    	<a href="index.html" rel="external" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+		        <div data-role="fieldcontain">
+		         	<label for="estadoaccion">Estado:</label>
+					<select id="estadoaccion" name="estadoaccion" class="required">
+						<option selected>Selección opción...</option>
+					</select>
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="obsAccion">Comentario:</label>
+					<textarea id="obsAccion" name="obsAccion" class="tongua" cols="40" rows="8" ></textarea>
+				</div>				
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#" data-role="button" id="actualizar" class="ui-footer ui-btn-right">Actualizar</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="mapa" data-role="page">
+			<div data-role="header" data-theme="e">
+		    	<a href="#detalle" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1>Localización Lugar</h1>
+			</div>
+			<div data-role="content" data-theme="c">
+  				<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+					<div id="canvas" style="height:350px;"></div>
+					<div id="display" style="height:120px;"></div>
+				</div>
+			</div>
+			<div data-role="footer" data-theme="e"></div>
+		</div>		
+	</body>
+</html>	

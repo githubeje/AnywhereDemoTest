@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	
+		<meta charset="utf-8"/>
+		<title>Generator-Listado</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile-1.2.1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile.structure-1.2.1.min.css">
+        <link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile.simpledialog.min.css">
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/app.css"/>
+		<script type="text/javascript" src="../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+		<script type="text/javascript" src="../jquery-mobile/jquery.validate.min.js"></script>		
+		<script type="text/javascript" src="../jquery-mobile/messages_es.js"></script>
+        <script type="text/javascript" src="../jquery-mobile/jquery.mobile.simpledialog2.min.js"></script>		
+		<script type="text/javascript" src="../js/generales.js"></script>
+		<script type="text/javascript" src="js/lista.js"></script>
+        <style>
+			.ui-icon-close {
+				background-image: url("../images/close.png");
+			}	
+			
+			.ui-icon-save {
+				background-image: url("../images/save.png");
+			}
+		</style>		
+	</head> 
+	<body> 
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+				<a href="index.html" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>			
+				<h1>Generator-Listado</h1>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<ul data-role="listview" data-theme="d" data-divider-theme="d" id="lista" ></ul>
+			</div>	
+		</div>
+	</body>
+</html>

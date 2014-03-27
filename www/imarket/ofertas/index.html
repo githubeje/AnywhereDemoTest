@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	
+		<meta charset="utf-8">
+		<title>IMarket</title>
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile.simpledialog.min.css">
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile-1.2.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile.datebox-1.0.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/app.css">
+		<script type="text/javascript" charset="utf-8" src="../../phonegap.js"></script>
+		<script src="../../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+		<script src="../../jquery-mobile/jquery.chained.js"></script>		
+		<script src="../../jquery-mobile/jquery.mobile.datebox-1.0.1.min.js"></script>
+		<script src="../../jquery-mobile/jquery.validate.min.js"></script>
+		<script src="../../jquery-mobile/jquery.mobile.simpledialog2.min.js"></script>
+		<script src="../../jquery-mobile/messages_es.js"></script>
+		<script src="../../js/camera.js"></script>
+		<script src="../../js/generales.js"></script>
+		<script src="index.js"></script>
+        <script src="../../js/PushNotification.js"></script>
+        <script src="../../js/notificaciones.js"></script>
+	</head> 
+	<body> 
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+		    	<a href="../index.html#procesos_competencia" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="IMarket - Procesos Competencia - Ofertas">IMarket - Procesos Competencia - Ofertas</h1>
+		    	<a href="../index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div data-role="content" data-theme="c">
+				<form method="post" id="formulario">			
+					<div data-role="fieldcontain">
+			         	<label for="nombre">Nombre:</label>
+			         	<input type="text" name="nombre" id="nombre" value="" class="required"/>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="descripcion">Descripcion:</label>
+			         	<input type="text" name="descripcion" id="descripcion" value="" class="required"/>
+					</div>
+			       <div data-role="fieldcontain">
+			         	<label for="fecha_inicio">Fecha Inicio:</label>
+			            <input name="fecha_inicio" id="fecha_inicio" type="date" data-role="datebox" data-options='{"mode": "datebox", "minDays" : 0, "disableManualInput": true , "useDialogForceTrue": true, "useDialogForceFalse": false}' class="required">
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="fecha_termino">Fecha Término:</label>
+			            <input name="fecha_termino" id="fecha_termino" type="date" data-role="datebox" data-options='{"mode": "datebox", "minDays" : 0, "disableManualInput": true , "useDialogForceTrue": true, "useDialogForceFalse": false}' class="required">
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="local">Cadena:</label>
+			         	<select id="local" name="local" class="required">
+			            	<option selected>Escoger Cadena</option>
+			            </select>
+					</div>
+			        <div data-role="fieldcontain">
+						<label for="punto_de_venta"> Punto de Venta:</label>
+			         	<select id="punto_de_venta" name="punto_de_venta" class="required">
+			            	<option>Escoger Punto de Venta</option>
+			            </select>
+					</div>		
+			        <div data-role="fieldcontain">
+			         	<label for="producto">Producto / Servicio:</label>
+			         	<select id="producto" name="producto" class="required">
+			            	<option selected>Escoger Producto</option>
+			            </select>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="precio_base">Precio Base:</label>
+			         	<input type="number" name="precio_base" id="precio_base" value="" class="required"/>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="nuevo_precio">Nuevo Precio:</label>
+			         	<input type="number" name="nuevo_precio" id="nuevo_precio" value="" class="required"/>
+					</div>
+					<div data-role="fieldcontain">
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#" data-role="button" onclick="capturePhotoEdit(Camera.PictureSourceType.CAMERA);">Capturar Foto</a></li>
+								<li><a href="#fotografia" rel="external" data-role="button" >Ver Foto</a></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">			
+					<ul>
+						<li>
+							<a href="#" id="save" data-icon="save" data-iconpos="notext">Guardar</a>
+						</li>
+					</ul>
+				</div>			
+			</div>
+		</div>
+		<div data-role="page" id="fotografia">
+			<div data-role="header" data-theme="e">
+		    	<a href="#principal" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="IMarket - Procesos Competencia - Ofertas - Fotograf&iacute;a">IMarket - Procesos Competencia - Ofertas - Fotograf&iacute;a</h1>
+			</div>
+			<div data-role="content"  style="text-align:center" data-theme="c">	
+				<img style="display:none;width:100px;height:100px" id="capturefacing" src="" />
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<h4>&nbsp;</h4>
+			</div>
+		</div>		
+	</body>
+</html>
+
+

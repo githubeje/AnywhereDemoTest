@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	
+		<meta charset="utf-8"/>
+		<title>StepStep</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile-1.2.1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile.datebox-1.0.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/app.css"/>
+		<script src="../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+        <script src="../jquery-mobile/jquery.mobile.datebox-1.0.1.min.js"></script>
+        <script src="../jquery-mobile/jquery.mobile.datebox.i18n.es-ES.utf8.js"></script>
+		<script src="../jquery-mobile/jquery.validate.min.js"></script>
+		<script src="../jquery-mobile/messages_es.js"></script>
+        <script src="../jquery-mobile/jquery.mobile.simpledialog2.min.js"></script>		
+        <script src="../jquery-mobile/moment.min.js"></script>
+		<script src="../js/generales.js"></script>
+		<script src="js/visualizacion.js"></script>
+	</head>
+	<body> 
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+			   	<a href="index.html" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="StepStep - Listado Procedimientos">StepStep - Listado Procedimientos</h1>
+			   	<a href="index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<form method="post" id="formulario1">
+					<ul data-role="listview" id="lista" ></ul>					
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">			
+					<ul>
+						<li><a href="#view_procedure" id="view" data-icon="page" data-iconpos="notext">Ver</a></li>
+						<li><a href="#" id="previous" data-icon="arrow-l" data-iconpos="notext" >Anterior</a></li>						
+						<li><a href="#" id="next" data-icon="arrow-r" data-iconpos="notext">Siguiente</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="view_procedure">
+			<div data-role="header" data-theme="e">
+			   	<a href="#principal" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="StepStep - Informaci&oacute;n Procedimiento">StepStep - Informaci&oacute;n Procedimiento</h1>
+			   	<a href="index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<input type="hidden" id="id" name="id" value="">
+				<div data-role="fieldcontain">
+					<label for="title">Nombre : </label>
+					<input type="text" id="title" name="title" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="description">Descripci&oacute;n : </label>
+					<input type="text" id="description" name="description" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="creation_date">Fecha de Creaci&oacute;n : </label>
+					<input type="text" id="creation_date" name="creation_date" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_owner">Usuario Creador : </label>
+					<input type="text" id="id_owner" name="id_owner" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_view_performers">Ejecutado por : </label>
+					<input type="text" id="id_view_performers" name="id_view_performers" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="id_view_applies">Aplica a : </label>
+					<input type="text" id="id_view_applies" name="id_view_applies" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="active">Estado : </label>
+					<input type="text" id="active" name="active" value="">
+				</div>
+			</div>
+		</div>		
+	</body>
+</html>

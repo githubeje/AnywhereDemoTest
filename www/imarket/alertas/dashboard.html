@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<!--<link type='text/css' rel='stylesheet' href='css/dashboard.css' />-->
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile-1.2.1.min.css">
+		<!--<link type='text/css' rel='stylesheet' href='css/jquery.mobile.css' />-->
+        <script src="../../jquery-mobile/jquery-1.8.3.min.js"></script>
+        <script src="../../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+        <script src="../js/PushNotification.js"></script>
+        <script src="../js/notificaciones.js"></script>
+		<!--<script src="scripts/jquery.js"></script>
+		<script src="scripts/jquery.mobile.js"></script>-->
+		<script type="text/javascript">
+			function aclose(container) {
+				$('#img' + container).remove();
+				$('#txt' + container).remove();
+				$('#btn' + container).remove();
+				$('#fnd' + container).remove();
+				if( $('#contenido').is(':empty') ) {
+					$("#index").stop().animate({"opacity": "1"}, "high");
+					$('#message').hide('slow');
+				}
+			}
+			
+			function ashowmsg() {
+				$('#message').show('slow');
+			}
+
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			if (!!window.EventSource) {
+				var eventSrc = new EventSource('http://www.anywhere.cl/facility/dispatcher?c=DisplayMessage&m=daily' );
+				eventSrc.addEventListener('message',
+					function(e) {
+						var mensaje = "";
+						var data = JSON.parse(e.data);
+						var mensaje = "<br><p><strong>" + data.asunto + "</p></strong>";
+						mensaje += "<p>" + data.msg + "</p>";
+						if(mensaje != "") {
+							$("#index").stop().animate({"opacity": "0.7"}, "high");
+							$("#contenido").append(
+								"<div class='fondo' id='fnd" + $.trim(data.id) + "' style='z-index:" +  $.trim(data.id) + "' >" + 
+									"<div class='texto' id='txt" + $.trim(data.id) + "'  >" + 
+										(mensaje) +
+									"</div>" + 		
+									"<div class='boton' id='btn" + $.trim(data.id) + "'  >" +
+										"<a href='#' id='close' data-role='button' data-theme='b' onclick=aclose('" + $.trim(data.id) + "')> " +
+											"<img src='images/close.png' >" +
+										"</a>" +										
+									"</div>" +  
+								"</div>");  
+						$("#message").show("slow");
+						}
+					}, false);
+				eventSrc.addEventListener('open', function(e) { }, false);
+				eventSrc.addEventListener('error', 
+					function(e) {
+						if (e.readyState == EventSource.CLOSED) {
+							//realizar tracking del usuario
+							document.getElementById("contenido").innerHTML = "conexion cerrada";
+						}
+					}, false);				
+			}
+			else {
+				document.getElementById("contenido").innerHTML = "Funcionalidad no soportada por el browser";
+			}
+		</script>
+		<div data-role="page" id="index" data-title="HomePage" align="center">
+			<div data-role="header" id="header" style="text-align: center;">
+				<img src="images/logo.png" ></img>
+			</div>
+			<div  style="background:#ffffff;">
+				<table id="dashboard" style="width:100%;height:100%"> 
+					<tr>
+						<td ><a href="#message" id="showmsg" onclick=ashowmsg()><img src="images/icons/yopuedo.png" width="40px" height="40px"></a><br>Yo Puedo</td>
+						<td><img src="images/icons/economicos.png" width="40px" height="40px"> <br>Economicos</td>
+					</tr>
+					<tr>
+						<td><img src="images/icons/personas.png" width="40px" height="40px"> <br>Personas</td>
+						<td><img src="images/icons/produccion.png" width="40px" height="40px"> <br>Produccion</td>
+					</tr>
+					<tr>
+						<td><img src="images/icons/comercial.png" width="40px" height="40px"> <br>Comerciales</td>
+						<td><img src="images/icons/sociales.png" width="40px" height="40px"> <br>Sociales</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><img src="images/icons/sos.png" width="40px" height="40px"> <br>Emergencias</td>
+					</tr>				
+				</table>
+			</div>
+			<div data-role="footer" id="footer" data-position="fixed">
+				<h4><a href="http://www.ejedigital.cl" rel="external">Powered by Eje Digital</a></h4>
+			</div>		
+		</div> <!-- Fin página -->
+		
+		<!-- Página con mensaje -->
+		<div id="message" data-title="Mensaje Diario" align="center">
+			<div data-role="content"  id="contmessage" >
+				<div id="contenido" style="position:absolute"></div>
+			</div>
+		</div> <!-- Fin página -->
+	</body>
+</html>

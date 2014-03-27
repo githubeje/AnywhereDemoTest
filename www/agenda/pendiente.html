@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="iso-8859-1">
+		<title>Agenda Comercial</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile-1.2.1.min.css">
+		<script src="../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+        <script src="../jquery-mobile/moment.min.js"></script>		
+		<script src="js/pendiente.js"></script>
+        <style>
+			.ui-icon-close {
+				background-image: url("../images/close.png");
+			}	
+			
+			.ui-icon-save {
+				background-image: url("../images/save.png");
+			}
+		</style>		
+	</head> 
+	<body> 
+		<div data-role="page" id="pendiente">
+			<div data-role="header" data-theme="e">
+		    	<a href="index.html" rel="external" data-role="button" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 id="title">Agenda Comercial - Eventos Pendientes</h1>
+		    	<a href="index.html" rel="external" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<input type="hidden" id="idAccion" value="">
+		        <div data-role="fieldcontain">
+		         	<label for="tipoAccion">Tipo Evento:</label>
+ 					<input type="text" class="tongua" id="tipoAccion" readonly value="">
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="nombre">Nombre:</label>
+ 					<input type="text" class="tongua" value="" id="nombre" readonly>
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="fechaInicio">Fecha:</label>
+ 					<input type="text" class="tongua" value="" id="fechaInicio" readonly>
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="horaInicio">Hora:</label>
+ 					<input type="text" class="tongua" value="" id="horaInicio" readonly>
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="celular">Telefono contacto:</label>
+ 					<input type="text" class="tongua" value="" id="celular" readonly>
+				</div>
+		        <div data-role="fieldcontain">
+		         	<label for="correo">Correo:</label>
+ 					<input type="text" class="tongua" value="" id="correo" readonly>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-role="button" data-icon="search" data-iconpos="notext" id="detailsView" rel="external">Ver Detalle</a></li>
+						<li><a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" id="previous">Anterior</a></li>
+						<li><a href="#" data-role="button" data-icon="arrow-r" data-iconpos="notext" id="next">Siguiente</a></li>
+						<li><a href="#" data-role="button" data-icon="delete" data-iconpos="notext" id="deleteAction">Eliminar</a></li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>

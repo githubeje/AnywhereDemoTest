@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	
+		<meta charset="utf-8"/>
+		<title>StepStep</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile-1.2.1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile.datebox-1.0.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/app.css"/>
+		<script type="text/javascript" src="../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+        <script type="text/javascript" src="../jquery-mobile/jquery.mobile.datebox-1.0.1.min.js"></script>
+        <script type="text/javascript" src="../jquery-mobile/jquery.mobile.datebox.i18n.es-ES.utf8.js"></script>
+		<script type="text/javascript" src="../jquery-mobile/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="../jquery-mobile/messages_es.js"></script>
+        <script type="text/javascript" src="../jquery-mobile/jquery.mobile.simpledialog2.min.js"></script>		
+        <script type="text/javascript" src="../jquery-mobile/moment.min.js"></script>
+		<script type="text/javascript" src="../js/generales.js"></script>
+		<script type="text/javascript" src="js/procedimientos.js"></script>
+	</head>
+	<body> 
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+			   	<a href="index.html" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="StepStep - Nuevo Procedimiento">StepStep - Nuevo Procedimiento</h1>
+			   	<a href="index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div data-role="content" data-theme="c">
+				<form method="post" id="formulario">
+                    <div data-role="fieldcontain">
+                        <label for="title">Titulo:</label>
+                        <input type="text" name="title" id="title" class="required"/>    
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="description">Descripci&oacute;n:</label>
+                        <input type="text" name="description" id="description" class="required"/>    
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="view_performers">Evaluador:</label>
+			         	<select name="view_performers" id="view_performers" class="required" multiple="multiple" data-native-menu="false">
+			            	<option value="" selected>Seleccione opci&oacute;n</option>
+						</select>                        
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="view_applies">Ejecutor:</label>
+			         	<select name="view_applies" id="view_applies" class="required" multiple="multiple" data-native-menu="false">
+			            	<option value="" selected>Seleccione opci&oacute;n</option>
+						</select>                     
+					</div>
+					<fieldset>
+						<legend>Step</legend>
+	                    <div data-role="fieldcontain">
+	                        <label for="step_initial">Inicial:</label>
+				         	<select name="step_initial" id="step_initial" class="required">
+				            	<option value="" selected>Seleccione opci&oacute;n</option>
+							</select>                     
+						</div>
+	                    <div data-role="fieldcontain">
+	                        <label for="step_end">Final:</label>
+				         	<select name="step_end" id="step_end" class="required">
+				            	<option value="" selected>Seleccione opci&oacute;n</option>
+							</select>   
+	                    </div>
+					</fieldset>
+                    <div data-role="fieldcontain">
+                        <label for="active" >Activo</label>
+                        <input type="checkbox" name="active" id="active" value="1">
+                    </div>
+ 				</form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">			
+					<ul>
+						<li><a href="#" id="new" data-icon="plus" data-iconpos="notext">Crear Paso</a></li>
+						<li><a href="#" id="delete" data-icon="trash" data-iconpos="notext">Borrar Paso</a></li>
+						<li><a href="#" id="view" data-icon="search" data-iconpos="notext">Ver Paso</a></li>
+						<li><a href="#" id="save" data-icon="save" data-iconpos="notext">Crear</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

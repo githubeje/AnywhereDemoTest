@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	
+		<meta charset="utf-8">
+		<title>IMarket</title>
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile-1.2.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile.datebox-1.0.1.min.css">
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/app.css">
+		<script type="text/javascript" charset="utf-8" src="../../phonegap.js"></script>		
+		<script src="../../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+		<script src="../../jquery-mobile/jquery.mobile.datebox-1.0.1.min.js"></script>
+		<script src="js/nuevo_producto.js"></script>
+		<script src="../../jquery-mobile/jquery.validate.min.js"></script>
+		<script src="../../jquery-mobile/messages_es.js"></script>
+		<script src="../../js/generales.js"></script>
+        <script src="../../js/PushNotification.js"></script>
+        <script src="../../js/notificaciones.js"></script>
+	</head> 
+	<body> 
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+		    	<a href="index.html" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="IMarket - Procesos Competencia - Nuevo Competidor - Nuevo Producto">IMarket - Procesos Competencia - Nuevo Competidor - Nuevo Producto</h1>
+				<a href="../index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div data-role="content" data-theme="c">
+			 	<form method="post" id="formulario">
+					<div data-role="fieldcontain">
+			         	<label for="nombre">Nombre:</label>
+			         	<input type="text" name="nombre" id="nombre" value="" class="required"/>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="descripcion">Descripción:</label>
+			         	<input type="text" name="descripcion" id="descripcion" value="" class="required"/>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="fecha_creacion">Fecha Creación:</label>
+			            <input name="fecha_creacion" id="fecha_creacion" type="date" data-role="datebox" data-options='{"mode": "datebox", "minDays" : 0, "disableManualInput": true , "useDialogForceTrue": true, "useDialogForceFalse": false}'>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="fecha_vencimiento">Fecha Vencimiento</label>
+			            <input name="fecha_vencimiento" id="fecha_vencimiento" type="date" data-role="datebox" data-options='{"mode": "datebox", "minDays" : 0, "disableManualInput": true , "useDialogForceTrue": true, "useDialogForceFalse": false}'>
+					</div>
+				    <div data-role="fieldcontain">
+				    	<div data-role="collapsible-set" id="caracteristicas"></div>
+				    </div>				
+			        <div data-role="fieldcontain">
+			         	<div data-role="collapsible-set">
+							<div data-role="collapsible"  data-theme="b" data-content-theme="d" id="complementarios">
+								<h3>Complementarios</h3>
+			    					<fieldset data-role="controlgroup"></fieldset>
+			                 </div>
+			             </div>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<div data-role="collapsible-set">
+							<div data-role="collapsible"  data-theme="b" data-content-theme="d" id="sustitutos">
+								<h3>Sustitutos</h3>
+			    					<fieldset data-role="controlgroup"></fieldset>
+			                 </div>
+			             </div>
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="precio">Precio:</label>
+			         	<input type="number" name="precio" id="precio" class="required">
+					</div>
+			        <div data-role="fieldcontain">
+			         	<label for="origen">Denominacion de Origen:</label>
+			         	<select id="origen" name="origen" class="required">
+			            	<option selected>Escoger Origen</option>
+			            </select>
+					</div>					
+			        <div data-role="fieldcontain">
+			         	<fieldset data-role="controlgroup" data-type="horizontal" >
+					    	<legend>Tipo de Producto</legend>
+					    	<label for="tipo1">Propio</label>
+			         		<input type="radio" name="tipo" id="tipo1" value="9"/>
+			         		<label for="tipo2">Marca</label>
+			         		<input type="radio" name="tipo" id="tipo2" value="10"/>
+			   			 </fieldset>
+					</div>
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">			
+					<ul>
+						<li>
+							<a href="#" id="save" data-icon="save" data-iconpos="notext">Guardar</a>
+						</li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</body>
+</html>

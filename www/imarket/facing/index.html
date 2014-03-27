@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	
+		<meta charset="utf-8"/>
+		<title>IMarket</title>
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile-1.2.1.min.css">
+        <link rel="stylesheet" type="text/css" href="../../jquery-mobile/jquery.mobile.simpledialog.min.css">		
+		<link rel="stylesheet" type="text/css" href="../../jquery-mobile/app.css">
+		<script type="text/javascript" charset="utf-8" src="../../phonegap.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAyzIvlogIlkdk6qqXgPcqGRRrb41JoWUZrahluOk81y-6F6GuWhTRTI6lSA2xEMpMhmGUIE4uTwXgRA" ></script>
+		<script src="../../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+        <script src="../../jquery-mobile/jquery.mobile.simpledialog2.min.js"></script>
+		<script src="../js/geolocation.js"></script>
+		<script src="../../js/generales.js"></script>
+		<script src="index.js"></script>
+        <script src="../../js/PushNotification.js"></script>
+        <script src="../../js/notificaciones.js"></script>
+	</head> 
+	<body onunload="GUnload()"> 
+		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+		    	<a href="../index.html#procesos_competencia" rel="external" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 title="IMarket - Procesos Competencia - Facing">IMarket - Procesos Competencia - Facing</h1>
+		    	<a href="../index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div data-role="content" data-theme="c">
+				<div data-role="fieldcontain">
+		            <a href="#" data-role="button" onclick="capturePhotoEdit(Camera.PictureSourceType.CAMERA);">Capturar Fotografía</a>
+				</div>
+		        <div data-role="fieldcontain">
+					<fieldset>
+						<div data-role="collapsible-set">
+							<div data-role="collapsible"  data-theme="b" data-content-theme="d">
+								<h3>Foto</h3>
+								<div data-role="fieldcontain">
+									<div class="ui-bar-c ui-corner-all ui-shadow center" style="padding:1em;width:140px;height:140px" >
+										<img style="position:relative;width:100%;height:96%" id="capturefacing" src="#" alt="foto instantanea"/>						
+									</div>
+								</div>
+			                </div>
+			                <div data-role="collapsible"  data-theme="b" data-content-theme="d">
+								<h3>Mapa</h3>
+								<div data-role="fieldcontain">
+			                        <div class="ui-bar-c ui-corner-all ui-shadow center" style="padding:1em;width:230px;height:400px"" >
+			                        <div id="direccion" style="position:relative;background:#000;color:#fff;opacity:0.6;text-align:center;font:12px/14px Arial;width:100%"></div>
+			                        <div id="map" style="position:relative;width:100%;height:96%"></div>
+			                        </div>
+								</div>
+			                </div>
+			                <div data-role="collapsible"  data-theme="b" data-content-theme="d">
+								<h3>Datos</h3>
+			                        <div data-role="fieldcontain">
+			                            <div data-role="fieldcontain">
+			                            <label for="descripcion">Descripcion:</label>
+			                            <input type="text" name="descripcion" id="descripcion" value=""  />
+			                        </div>
+			                        <div data-role="fieldcontain">
+			                            <label for="fecha">Fecha Captura:</label>
+			                            <input type="text" name="fecha" id="fecha" value=""  />
+			                        </div>
+			                        <div data-role="fieldcontain">
+			                            <label for="direccion_fisica">Direccion Captura:</label>
+			                            <input type="text" name="direccion_fisica" id="direccion_fisica" value=""  />
+			                        </div>
+			                        <div data-role="fieldcontain">
+			                              <label for="competidor">Competidor:</label>
+			                            <select id="competidor" name="competidor">
+			                                <option selected>Escoger Punto de Venta</option>
+			                            </select>
+			                        </div>
+			                        <div data-role="fieldcontain">
+			                              <label for="pto_de_vta">Punto de Venta:</label>
+			                            <select id="pto_de_vta" name="pto_de_vta">
+			                                <option selected>Escoger Punto de Venta</option>
+			                            </select>
+			                        </div>
+			                        <div data-role="fieldcontain">
+			                            <label for="producto"> Producto / Servicio:</label>
+			                            <select id="producto" name="producto">
+			                                <option selected>Escoger Producto / Servicio</option>
+			                            </select>
+			                        </div>
+			
+								</div>
+			                </div>
+			            </div>
+		            </fieldset>
+		        </div>
+		 	</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">			
+					<ul>
+						<li>
+							<a href="#" id="save" data-icon="save" data-iconpos="notext">Guardar</a>				
+						</li>
+					</ul>
+				</div>			
+			</div>
+		</div>
+	</body>
+</html>

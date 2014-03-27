@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="iso-8859-1"/>
+		<title>Agenda Comercial</title>
+		<link rel="stylesheet" type="text/css" href="../jquery-mobile/jquery.mobile-1.2.1.min.css"/>
+		<script src="../jquery-mobile/jquery-1.8.3.min.js"></script>
+		<script src="../jquery-mobile/jquery.mobile-1.2.1.min.js"></script>
+        <script src="../jquery-mobile/moment.min.js"></script>
+		<script src="js/atrasados.js"></script>
+        <style>
+			.ui-icon-close {
+				background-image: url("../images/close.png");
+			}	
+			
+			.ui-icon-save {
+				background-image: url("../images/save.png");
+			}
+		</style>		
+	</head> 
+	<body>
+ 		<div data-role="page" id="principal">
+			<div data-role="header" data-theme="e">
+		    	<a href="index.html" rel="external" data-role="button" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 id="title">Agenda Comercial - Atrasados</h1>
+		    	<a href="index.html" rel="external" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<ul data-role="listview">
+					<li><a id="diaria" href="#eventos"><img src="images/circle_green.png" class="ui-li-icon" data-iconpos="right">Diario</a></li>
+		            <li><a id="semanal" href="#eventos"><img src="images/circle_orange.png" class="ui-li-icon" data-iconpos="right">Semanal</a></li>
+		            <li><a id="mensual" href="#eventos"><img src="images/circle_red.png" class="ui-li-icon" data-iconpos="right">Mensual</a></li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<h4>&nbsp;</h4>
+			</div>
+		</div>
+ 		<div data-role="page" id="eventos">
+			<div data-role="header" data-theme="e">
+		    	<a href="#principal" data-role="button" data-icon="back" data-iconpos="notext">Atrás</a>
+				<h1 id="stitle">Agenda - Periodo </h1>
+		    	<a href="index.html" rel="external" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+			</div>
+			<div class="ui-content" data-role="content" id="contenido" data-theme="c">
+				<ul data-role='listview' data-theme='d' data-divider-theme='d' id='lista' ></ul>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<h4>&nbsp;</h4>
+			</div>
+		</div>
+	</body>
+</html>
